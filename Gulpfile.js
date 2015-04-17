@@ -24,4 +24,4 @@ gulp.task('test', function () {
   .pipe(gulp.dest('./test'));
 })
 
-gulp.task('default', ['build']);
+gulp.task('default', ['build', 'test']);
