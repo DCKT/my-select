@@ -1,4 +1,4 @@
-var Select = require('../lib/select.js');
+var Select = require('my-select');
 
 document.addEventListener('DOMContentLoaded', function () {
   new Select({
