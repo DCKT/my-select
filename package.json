@@ -1,0 +1,31 @@
+{
+  "name": "my-select",
+  "version": "1.0.0",
+  "description": "Create your custom select",
+  "main": "lib/select.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DCKT/my-select.git"
+  },
+  "keywords": [
+    "select",
+    "vanillajs",
+    "custom"
+  ],
+  "author": "Thomas Deconinck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DCKT/my-select/issues"
+  },
+  "homepage": "https://github.com/DCKT/my-select",
+  "devDependencies": {
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
