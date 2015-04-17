@@ -2,7 +2,7 @@ var gulp   = require('gulp'),
 babelify   = require('babelify'),
 source     = require('vinyl-source-stream'),
 babel      = require('gulp-babel'),
-concat = require('gulp-concat'),
+concat     = require('gulp-concat'),
 browserify = require('browserify');
 
 
@@ -13,15 +13,15 @@ gulp.task('build', function () {
   .pipe(gulp.dest('./lib'));
 })
 
-gulp.task('test', function () {
+gulp.task('demo', function () {
    browserify({
-    entries: './test/app.js',
+    entries: './demo/app.js',
     debug: true
   })
   .transform(babelify)
   .bundle()
   .pipe(source('bundle.js'))
-  .pipe(gulp.dest('./test'));
+  .pipe(gulp.dest('./demo'));
 })
 
-gulp.task('default', ['build', 'test']);
+gulp.task('default', ['build', 'demo']);
