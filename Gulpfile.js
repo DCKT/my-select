@@ -7,7 +7,7 @@ browserify = require('browserify');
 
 
 gulp.task('build', function () {
-  return gulp.src('./lib/selectES6.js')
+  return gulp.src('./lib/select.es6.js')
   .pipe(babel())
   .pipe(concat('select.js'))
   .pipe(gulp.dest('./lib'));
@@ -24,4 +24,8 @@ gulp.task('demo', function () {
   .pipe(gulp.dest('./demo'));
 })
 
-gulp.task('default', ['build', 'demo']);
+gulp.task('watch', function () {
+  gulp.watch('lib/select.es6.js', ['build', 'demo']);
+});
+
+gulp.task('default', ['build', 'demo', 'watch']);

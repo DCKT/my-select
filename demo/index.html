@@ -10,19 +10,65 @@
     .js-mySelect-List--visible {
       display: block;
     }
+
+    .js-mySelect-Container {
+      width: 200px;
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+      position: relative;
+      cursor: pointer;
+    }
+    .js-mySelect-Container:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 7px;
+      width: 0; 
+      height: 0; 
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent; 
+      
+      border-left:7px solid #444; 
+    }
+
+    .js-mySelect-Container.js-mySelect-Container--open:after {
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent; 
+      border-bottom: none;
+      top: 10px;
+      border-top:7px solid #444; 
+    }
+
+    .js-mySelect-List {
+      cursor:pointer; 
+    }
+
   </style>
 </head>
 <body>
-  <select id="custom">
-    <option>1</option>  
+  <select class="js-mySelect">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
   </select>
 
-  <div class="js-mySelect-Container">1</div> 
-  <div class="js-mySelect-List">
-    <div class="js-mySelect-List-Item">1</div>
-    <div class="js-mySelect-List-Item">2</div>
-    <div class="js-mySelect-List-Item">3</div>
-    <div class="js-mySelect-List-Item">4</div>
+  <select class="js-mySelect">
+    <option value="toto">toto</option>
+    <option value="tata">tata</option>
+    <option value="aa">aa</option>
+    <option value="zz">zz</option>
+  </select>
+
+
+  <div id="bloc" class="js-mySelect-Wrapper">
+    <h1>Select 1</h1>
+  </div> 
+
+  <div id="bloc2" class="js-mySelect-Wrapper">
+    <h1>Select 2</h1>
   </div> 
   <script type="text/javascript" src="bundle.js"></script>
 </body>
