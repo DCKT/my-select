@@ -2,44 +2,51 @@
 Create your custom select.
 You can use this module with `browserify` and `require('my-select')`.
 
-## Structure
-
-You need to have 2 principals HTML elements :
-- **the container** : contain the selected value
-- **the list**: contain all the values
-
-Each item in the list must have a class for binding a click event on him.
+### How it works
+The plugin will look for all select who have the *js-mySelect* class and create a fake select based on him.
+After the creation, the fake select will be append to the div who has the **js-mySelect-Wrapper** class.
+**The ordering is important !**
 
 ### Example :
 ```html
-<select id="custom"></select>
-<div class="js-mySelect-Container">1</div> 
-<div class="js-mySelect-List">
-  <div class="js-mySelect-List-Item">1</div>
-  <div class="js-mySelect-List-Item">2</div>
-  <div class="js-mySelect-List-Item">3</div>
-  <div class="js-mySelect-List-Item">4</div>
-</div> 
+<select id="custom js-mySelect">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select>
+
+<div class="someWhereToAppend js-mySelect-Wrapper">
+  <!-- fakeSelect will be added here -->
+</div>
 ```
 
+### Installation
+You can use the minified file in **lib/select.js** for production or if you use Browserify, you just have to `require('my-select')` and `npm i`
+
+
+
 ### Setup
-In your JavaScript, you just need to require the module and create a new instance of the **Select** object with the selectors :
+Simply create a new instance of the **Select** object.
+
 ```js
 var Select = require('my-select');
 
 document.addEventListener('DOMContentLoaded', function () {
-  new Select({
-    containerSelector: ".js-mySelect-Container",
-    listSelector: ".js-mySelect-List",
-    listItemSelector: ".js-mySelect-List-Item",
-    selectToBind: "#custom"
-  });
+  new Select();
 }, false);
 
 ```
 
-Each time you click on a list item, the select to bind will have his option rewritten.
+Each time you click on a list item, the select binded will have his selected value changed.
 
+#### Use a custom class
+You can use a custom class to trigger your select, in the contstructor you just need to pass an object like this :
+
+```js
+new Select({
+  select: '.anotherSelect'
+});
+```
 
 ## Support 
 This module uses classList who isn't available on IE9 and below, if you have to play around just use a polyfill :smile:
