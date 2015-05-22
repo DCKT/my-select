@@ -48,5 +48,23 @@ new Select({
 });
 ```
 
+### Events
+
+You can add a **change** event who will be triggered each time a fake select option has been clicked. 
+The `this` context able you to access all of the properties :
+- selects: NodeList, contains all of the initial select
+- wrappers:  NodeList, contains all the wrappers
+- lists: Array, fake select list
+- events: Array, all events added by the on method
+
+Ex:
+```js
+var selects = new Select();
+
+selects.on('change', function(index) {
+  // some code
+});
+```
+
 ## Support 
 This module uses classList who isn't available on IE9 and below, if you have to play around just use a polyfill :smile:
