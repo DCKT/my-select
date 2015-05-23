@@ -4,8 +4,16 @@ source     = require('vinyl-source-stream'),
 babel      = require('gulp-babel'),
 concat     = require('gulp-concat'),
 uglify     = require('gulp-uglify'),
+connect    = require('gulp-connect'),
 browserify = require('browserify');
 
+
+gulp.task('server', function() {
+  connect.server({
+    root: './demo/',
+    port: 1337
+  });
+});
 
 gulp.task('build', function() {
   return gulp.src('./lib/select.es6.js')
@@ -30,4 +38,4 @@ gulp.task('watch', function() {
   gulp.watch('lib/select.es6.js', ['build', 'demo']);
 });
 
-gulp.task('default', ['build', 'demo', 'watch']);
+gulp.task('default', ['build', 'server', 'demo', 'watch']);

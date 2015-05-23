@@ -66,5 +66,14 @@ selects.on('change', function(index) {
 });
 ```
 
+## What about device ? 
+By default, when the user will click on your fake select it will trigger the native select for better UX.
+If you don't want this behavior you can disabled him in the constructor :
+```js
+var selects = new Select({
+  nativeOnDevice: false
+});
+```
+
 ## Support 
 This module uses classList who isn't available on IE9 and below, if you have to play around just use a polyfill :smile:
