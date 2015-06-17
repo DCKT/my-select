@@ -1,6 +1,6 @@
 # my-select
 Create your custom select.
-You can use this module with `browserify` and `require('my-select')`.
+You can use this module with `browserify` and `require('select')`.
 
 ### How it works
 The plugin will look for all select who have the *js-mySelect* class and create a fake select based on him.

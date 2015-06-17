@@ -1,6 +1,6 @@
 {
-  "name": "my-select",
-  "version": "2.2.0",
+  "name": "select",
+  "version": "1.0.0",
   "description": "Create your custom select",
   "main": "lib/select.js",
   "scripts": {
