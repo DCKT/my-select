@@ -15,7 +15,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('build', function() {
-  return gulp.src('./lib/new.js')
+  return gulp.src('./lib/select.es6.js')
   .pipe(babel())
   .pipe(uglify())
   .pipe(concat('select.js'))
