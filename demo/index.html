@@ -4,14 +4,14 @@
   <title>my-select</title>
   <meta name="viewport" content="width=device-width">
   <style>
-    .js-mySelect-List {
+    .js-myselect-values {
       display: none;
     }
-    .js-mySelect-List--visible {
+    .js-myselect-values--visible {
       display: block;
     }
 
-    .js-mySelect-Container {
+    .js-myselect-selected-value {
       width: 200px;
       background: #eee;
       padding: 5px 10px;
@@ -19,43 +19,43 @@
       position: relative;
       cursor: pointer;
     }
-    .js-mySelect-Container:after {
+    .js-myselect-selected-value:after {
       content: "";
       display: block;
       position: absolute;
       right: 10px;
       top: 7px;
-      width: 0; 
-      height: 0; 
+      width: 0;
+      height: 0;
       border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent; 
-      
-      border-left:7px solid #444; 
+      border-bottom: 7px solid transparent;
+
+      border-left:7px solid #444;
     }
 
-    .js-mySelect-Container.js-mySelect-Container--open:after {
+    .js-myselect-selected-value.js-myselect-selected-value--open:after {
       border-left: 7px solid transparent;
-      border-right: 7px solid transparent; 
+      border-right: 7px solid transparent;
       border-bottom: none;
       top: 10px;
-      border-top:7px solid #444; 
+      border-top:7px solid #444;
     }
 
-    .js-mySelect-List {
-      cursor:pointer; 
+    .js-myselect-list {
+      cursor:pointer;
     }
 
   </style>
 </head>
 <body>
-  <select class="js-mySelect">
+  <select class="test">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
 
-  <select class="js-mySelect">
+  <select class="js-myselect">
     <option value="toto">toto</option>
     <option value="tata">tata</option>
     <option value="aa">aa</option>
@@ -63,13 +63,13 @@
   </select>
 
 
-  <div id="bloc" class="js-mySelect-Wrapper">
+  <div id="bloc" class="js-myselect-Wrapper">
     <h1>Select 1</h1>
-  </div> 
+  </div>
 
-  <div id="bloc2" class="js-mySelect-Wrapper">
+  <div id="bloc2" class="js-myselect-Wrapper">
     <h1>Select 2</h1>
-  </div> 
+  </div>
   <script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>
